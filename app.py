@@ -1,8 +1,14 @@
-from flask import Flask
-import os
+from flask import Flask, render_template, request
 
-app = Flask(__name__)  # Create the Flask app instance
+app = Flask(__name__)
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Get the PORT from the environment, default to 5000
-    app.run(host='0.0.0.0', port=port)        # Run the app on the specified port
+# Route for homepage with form handling
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        username = request.form['username']
+        return f"Hello, {username}! Welcome to Cyberforce-1!"
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)

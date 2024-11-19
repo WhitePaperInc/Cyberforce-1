@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberforce-1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.dropbox.com/scl/fi/jkvlozie7jzgq9hk6uvu9/66d6e0c0fac51776c60c72a1_AD_4nXf0gS_y0AHW2T3Ik_fb2fGexjzFw9NXcM_yPcuZzYojz_3HWci4Ku3qjCKwVjzv31N1FvNqmupmz0W_VZT7thGi6Vx19IVaQ4F6DJX2j13-_VfyKLVjiO1Mp7TfStgiGaRqItsP3lD_h2L4UySzlHFraOUd.jpeg?raw=1') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #0044cc;
+            font-size: 3em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .button:hover {
+            background-color: #002266;
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-top: 20px;
+            color: #0044cc;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 80%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Cyberforce-1</h1>
+        <p>Your gateway to expanding access to education, improving learning outcomes, and promoting skills development.</p>
+        
+        <div class="icon">👋🏽</div>
+
+        <p>Let's know you better Buddy, what's your name?</p>
+        
+        <form action="/name" method="POST">
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
