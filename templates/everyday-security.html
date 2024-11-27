@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Security Tips - Cyberforce-1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link to FontAwesome Icons -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #1E3A8A;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: "Lucida Console", sans-serif;
+            color: #fcfafa;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .tip-card {
+            background-color: #1E40AF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.1em;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tip-card i {
+            font-size: 1.5em;
+        }
+        .tip-card:hover {
+            background-color: #2563eb;
+            transition: background-color 0.3s ease;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .buttons-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            background-color: #1E40AF;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 200px;
+        }
+        .button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Everyday Cybersecurity Tips</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h2>15 Essential Tips to Improve Your Cybersecurity:</h2>
+            <section>
+                <div class="tips-grid">
+                    <div class="tip-card"><i class="fas fa-lock"></i> 1. Use strong and unique passwords for each account. </div>
+                    <div class="tip-card"><i class="fas fa-shield-alt"></i> 2. Enable two-factor authentication wherever possible. </div>
+                    <div class="tip-card"><i class="fas fa-link"></i> 3. Avoid clicking on suspicious links or downloading unknown attachments. </div>
+                    <div class="tip-card"><i class="fas fa-sync-alt"></i> 4. Regularly update your software and security patches. </div>
+                    <div class="tip-card"><i class="fas fa-globe"></i> 5. Use a VPN when accessing public Wi-Fi networks. </div>
+                    <div class="tip-card"><i class="fas fa-phone-alt"></i> 6. Avoid sharing sensitive information over email or phone unless verified. </div>
+                    <div class="tip-card"><i class="fas fa-desktop"></i> 7. Keep your devices' operating systems and applications up-to-date. </div>
+                    <div class="tip-card"><i class="fas fa-cloud-upload-alt"></i> 8. Backup important data regularly and securely. </div>
+                    <div class="tip-card"><i class="fas fa-shield-virus"></i> 9. Use a reputable antivirus and malware protection software. </div>
+                    <div class="tip-card"><i class="fas fa-plug"></i> 10. Be cautious when connecting external devices like USB drives to your system. </div>
+                    <div class="tip-card"><i class="fas fa-lock"></i> 11. Lock your devices when not in use, even at home. </div>
+                    <div class="tip-card"><i class="fas fa-graduation-cap"></i> 12. Educate yourself on recognizing phishing and scam attempts. </div>
+                    <div class="tip-card"><i class="fas fa-tachometer-alt"></i> 13. Disable unused services and applications on your devices. </div>
+                    <div class="tip-card"><i class="fas fa-wifi"></i> 14. Secure your home Wi-Fi network with a strong password and encryption. </div>
+                    <div class="tip-card"><i class="fas fa-key"></i> 15. Use a password manager to securely store and generate strong passwords. </div>
+                </div>
+            </section>
+            <p class="note">Once you're ready, <span id="name-greeting"></span>, take the quiz to test your cybersecurity knowledge!</p>
+            <div class="buttons-container">
+                <a href="/welcome" aria-label="Go back to the homepage">
+                    <button class="button">Go Back</button>
+                </a>
+                <a href="/quiz" aria-label="Take the cybersecurity quiz">
+                    <button class="button">Take Quiz</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the name from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        
+        // Display the user's name in the greeting
+        if (userName) {
+            document.getElementById('name-greeting').textContent = `Hello, ${userName}!`;
+        }
+    </script>
+</body>
+</html>

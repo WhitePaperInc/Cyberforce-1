@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Cyberforce-1</title>
+    <style>
+        /* General Reset for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f9fc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content starts from the top */
+            min-height: 100vh; /* Body takes at least full viewport height */
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            padding: 0 10px; /* Add some padding to avoid edge clipping */
+        }
+
+        header {
+            margin-bottom: 30px;
+            flex-shrink: 0; /* Prevent header from shrinking */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #1E3A8A;
+            margin: 0;
+        }
+
+        .welcome-note {
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            text-align: center;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically on smaller screens */
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .button {
+            background-color: #1E40AF;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            width: 200px; /* Fixed button width */
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Adjust header size for mobile screens */
+            }
+
+            .button {
+                width: 80%; /* Make buttons take more space on smaller screens */
+            }
+
+            .welcome-note {
+                font-size: 1.1em; /* Make text smaller on smaller screens */
+                padding: 0 20px; /* Add some padding on sides to avoid edge issues */
+            }
+
+            .buttons-container {
+                flex-direction: column; /* Stack buttons vertically */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Cyberforce-1</h1>
+    </header>
+    <div class="welcome-note">
+        <p id="welcome-message">Welcome, friend! Let's get started on your cybersecurity journey.</p>
+        <p>At Cyberforce-1, we believe in empowering individuals and organizations to protect their digital lives. This web application is designed to promote awareness and provide essential tools for enhancing online security. Whether you're here to learn practical cybersecurity tips or to test your knowledge through our quiz, you're taking an important step toward becoming more resilient in an increasingly digital world. Created entirely through Artificial Intelligence knowledge and Cybersecurity awareness class notes, let's work together to build a safer cyberspace! Thanks to 3MTT and The Ministry. Happy learning!</p>
+    </div>
+    <div class="buttons-container">
+        <a href="/" class="button">Home</a>
+        <a href="/everyday-security" class="button">Learn About Security</a>
+    </div>
+    <div class="footer-note">
+        Your journey to mastering cybersecurity begins here.
+    </div>
+
+    <script>
+        // Function to get the query parameter from URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Fetch and display the name from the URL parameter
+        const name = getQueryParam('name');
+        if (name) {
+            document.getElementById('welcome-message').textContent = `Welcome, ${decodeURIComponent(name)}! Let's get started on your cybersecurity journey.`;
+        }
+    </script>
+</body>
+</html>
+
+

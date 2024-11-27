@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Quiz - Cyberforce-1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: #00008B; /* Dark blue color */
+        }
+        .quiz-container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #1E40AF;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #2563eb;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .answers {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cybersecurity Quiz</h1>
+
+    <!-- Display user's name if available -->
+    {% if visitor_name %}
+    <p>Hello, {{ visitor_name }}! Test your knowledge of cybersecurity! Answer the following questions:</p>
+    {% else %}
+    <p>Test your knowledge of cybersecurity! Answer the following questions:</p>
+    {% endif %}
+
+    <div class="quiz-container">
+        <form action="/quiz" method="POST">  <!-- Corrected form action to POST to /quiz -->
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. What is phishing?</p>
+                <div class="answers">
+                    <input type="radio" id="q1a1" name="q1" value="1">
+                    <label for="q1a1">A type of email scam to steal personal information</label><br>
+                    <input type="radio" id="q1a2" name="q1" value="2">
+                    <label for="q1a2">A software designed to protect against malware</label><br>
+                    <input type="radio" id="q1a3" name="q1" value="3">
+                    <label for="q1a3">A strong password generator</label>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. What should you use to secure your accounts?</p>
+                <div class="answers">
+                    <input type="radio" id="q2a1" name="q2" value="1">
+                    <label for="q2a1">The same password for all accounts</label><br>
+                    <input type="radio" id="q2a2" name="q2" value="2">
+                    <label for="q2a2">A strong and unique password for each account</label><br>
+                    <input type="radio" id="q2a3" name="q2" value="3">
+                    <label for="q2a3">No password</label>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. What is the purpose of two-factor authentication?</p>
+                <div class="answers">
+                    <input type="radio" id="q3a1" name="q3" value="1">
+                    <label for="q3a1">To provide an additional layer of security</label><br>
+                    <input type="radio" id="q3a2" name="q3" value="2">
+                    <label for="q3a2">To save time during login</label><br>
+                    <input type="radio" id="q3a3" name="q3" value="3">
+                    <label for="q3a3">To share passwords with others</label>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What should you avoid doing on public Wi-Fi?</p>
+                <div class="answers">
+                    <input type="radio" id="q4a1" name="q4" value="1">
+                    <label for="q4a1">Using a VPN</label><br>
+                    <input type="radio" id="q4a2" name="q4" value="2">
+                    <label for="q4a2">Accessing sensitive accounts</label><br>
+                    <input type="radio" id="q4a3" name="q4" value="3">
+                    <label for="q4a3">Checking emails</label>
+                </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. Why is it important to update your software?</p>
+                <div class="answers">
+                    <input type="radio" id="q5a1" name="q5" value="1">
+                    <label for="q5a1">To get new features</label><br>
+                    <input type="radio" id="q5a2" name="q5" value="2">
+                    <label for="q5a2">To enhance security by fixing vulnerabilities</label><br>
+                    <input type="radio" id="q5a3" name="q5" value="3">
+                    <label for="q5a3">To remove old features</label>
+                </div>
+            </div>
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. What is a VPN used for?</p>
+                <div class="answers">
+                    <input type="radio" id="q6a1" name="q6" value="1">
+                    <label for="q6a1">Accessing blocked websites</label><br>
+                    <input type="radio" id="q6a2" name="q6" value="2">
+                    <label for="q6a2">Securing your connection on public networks</label><br>
+                    <input type="radio" id="q6a3" name="q6" value="3">
+                    <label for="q6a3">Disabling Wi-Fi</label>
+                </div>
+            </div>
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. How often should you back up your data?</p>
+                <div class="answers">
+                    <input type="radio" id="q7a1" name="q7" value="1">
+                    <label for="q7a1">Never</label><br>
+                    <input type="radio" id="q7a2" name="q7" value="2">
+                    <label for="q7a2">Regularly</label><br>
+                    <input type="radio" id="q7a3" name="q7" value="3">
+                    <label for="q7a3">Only when you change devices</label>
+                </div>
+            </div>
+            <!-- Question 8 -->
+            <div class="question">
+                <p>8. What is the best way to recognize phishing emails?</p>
+                <div class="answers">
+                    <input type="radio" id="q8a1" name="q8" value="1">
+                    <label for="q8a1">Look for urgent requests for personal information</label><br>
+                    <input type="radio" id="q8a2" name="q8" value="2">
+                    <label for="q8a2">Ignore all emails</label><br>
+                    <input type="radio" id="q8a3" name="q8" value="3">
+                    <label for="q8a3">Only open emails from unknown senders</label>
+                </div>
+            </div>
+            <!-- Question 9 -->
+            <div class="question">
+                <p>9. What should you do before clicking a link in an email?</p>
+                <div class="answers">
+                    <input type="radio" id="q9a1" name="q9" value="1">
+                    <label for="q9a1">Hover over the link to check its destination</label><br>
+                    <input type="radio" id="q9a2" name="q9" value="2">
+                    <label for="q9a2">Click it to see what happens</label><br>
+                    <input type="radio" id="q9a3" name="q9" value="3">
+                    <label for="q9a3">Forward the email to others</label>
+                </div>
+            </div>
+            <!-- Question 10 -->
+            <div class="question">
+                <p>10. How can you secure your home Wi-Fi network?</p>
+                <div class="answers">
+                    <input type="radio" id="q10a1" name="q10" value="1">
+                    <label for="q10a1">Leave it open for guests</label><br>
+                    <input type="radio" id="q10a2" name="q10" value="2">
+                    <label for="q10a2">Use a strong password and enable encryption</label><br>
+                    <input type="radio" id="q10a3" name="q10" value="3">
+                    <label for="q10a3">Disable your Wi-Fi</label>
+                </div>
+            </div>
+
+            <button type="submit" class="button">Submit Answers</button>
+        </form>
+    </div>
+
+</body>
+</html>

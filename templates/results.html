@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - Cyberforce-1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: #00008B; /* Dark blue color */
+        }
+        .results-container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #1E40AF;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #2563eb;
+        }
+        .score {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz Results</h1>
+
+    <!-- Display the visitor's name and score -->
+    <div class="results-container">
+        <p>Hello, {{ visitor_name }}!</p>
+        <p class="score">Your score is: {{ score }} out of 10</p>
+
+        <!-- Button to retake quiz -->
+        <a href="/quiz" class="button">Retake Quiz</a>
+
+        <!-- Button to go back to home -->
+        <a href="/" class="button">Go Back Home</a>
+    </div>
+
+</body>
+</html>
