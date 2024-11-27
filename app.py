@@ -1,7 +1,8 @@
+import os
 from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Use a strong secret key
+app.secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')  # Use environment variable for secret key
 
 # Route for the homepage
 @app.route('/', methods=['GET', 'POST'])
@@ -67,4 +68,6 @@ def results():
     return render_template('results.html', visitor_name=visitor_name, score=score)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)  # Set host to 0.0.0.0 and port to 5000
+    port = int(os.environ.get('PORT', 5000))  # Use the port provided by Render
+    app.run(debug=False, host='0.0.0.0', port=port)  # Debug disabled for production
+
